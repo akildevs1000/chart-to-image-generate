@@ -6,9 +6,7 @@ const path = require('path');
 // Register all the necessary components
 Chart.register(...registerables);
 
-function generateDonutChart() {
-    // Sample data
-    const dataValues = [12, 19, 3, 5, 2, 3];
+function generateDonutChart(dataValues) {
     // Calculate the total value of the dataset
     const totalValue = dataValues.reduce((acc, value) => acc + value, 0);
     console.log(`Total Value: ${totalValue}`);
@@ -21,7 +19,7 @@ function generateDonutChart() {
     const chartConfig = {
         type: 'doughnut', // Change to 'doughnut' for donut chart
         data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: ['Black', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
             datasets: [{
                 label: 'Votes',
                 data: dataValues,
@@ -83,4 +81,4 @@ function generateDonutChart() {
 }
 
 // Call the function to generate the donut chart
-generateDonutChart();
+generateDonutChart([12, 19, 3, 5, 2, 3, 11]);
